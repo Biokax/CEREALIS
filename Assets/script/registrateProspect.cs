@@ -32,8 +32,9 @@ public class registrateProspect : MonoBehaviour
         request.Method = Method.Post;
         request.AddHeader("accept", "application/json");
         request.AddHeader("content-type", "application/json");
+        // this is a test api for a school project we don't care about the bearer token been leaked
         request.AddHeader("authorization", "Bearer pat-eu1-288a140d-3998-4efd-826b-83b5cc0a69fe");
-        request.AddParameter("application/json", "{\"properties\":{\"email\":\"" + mail+ "\",\"lastname\":\"" + mail+ "\"}}", ParameterType.RequestBody);
+        request.AddParameter("application/json", "{\"properties\":{\"email\":\"" + mail+ "\",\"lastname\":\"" + name+ "\"}}", ParameterType.RequestBody);
         RestResponse response = client.Execute(request);
 
         Debug.Log("Status Code: " + response.StatusCode);
